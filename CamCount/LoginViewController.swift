@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  CamCount
 //
 //  Created by Paulina DeVito on 10/9/22.
@@ -7,17 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        //testing Github
-    }
-
-    func doNothing() -> Int
-    {
-        return 0
     }
 }
 
