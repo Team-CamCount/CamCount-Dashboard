@@ -26,6 +26,9 @@
 		B763AABC290DAE020059ACEB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B763AABB290DAE020059ACEB /* SettingsViewController.swift */; };
 		B763AABD290DAE020059ACEB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B763AABB290DAE020059ACEB /* SettingsViewController.swift */; };
 		B763AABE290DAE020059ACEB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B763AABB290DAE020059ACEB /* SettingsViewController.swift */; };
+		B763AAC0290F66EA0059ACEB /* CamerasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B763AABF290F66EA0059ACEB /* CamerasCell.swift */; };
+		B763AAC1290F66EA0059ACEB /* CamerasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B763AABF290F66EA0059ACEB /* CamerasCell.swift */; };
+		B763AAC2290F66EA0059ACEB /* CamerasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B763AABF290F66EA0059ACEB /* CamerasCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,7 @@
 		B763AAB229072B230059ACEB /* CamerasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamerasViewController.swift; sourceTree = "<group>"; };
 		B763AAB6290CD40E0059ACEB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B763AABB290DAE020059ACEB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B763AABF290F66EA0059ACEB /* CamerasCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamerasCell.swift; sourceTree = "<group>"; };
 		C3D90204D37ADEC3282FAC61 /* Pods-CamCount-CamCountUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamCount-CamCountUITests.debug.xcconfig"; path = "Target Support Files/Pods-CamCount-CamCountUITests/Pods-CamCount-CamCountUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +146,7 @@
 				B75656BA28F3229200DDF45B /* LaunchScreen.storyboard */,
 				B75656B328F3228E00DDF45B /* LoginViewController.swift */,
 				B763AAB229072B230059ACEB /* CamerasViewController.swift */,
+				B763AABF290F66EA0059ACEB /* CamerasCell.swift */,
 				B763AABB290DAE020059ACEB /* SettingsViewController.swift */,
 				B75656B828F3229200DDF45B /* Assets.xcassets */,
 				B763AAB6290CD40E0059ACEB /* GoogleService-Info.plist */,
@@ -427,6 +432,7 @@
 			files = (
 				B75656B428F3228E00DDF45B /* LoginViewController.swift in Sources */,
 				B763AAB329072B230059ACEB /* CamerasViewController.swift in Sources */,
+				B763AAC0290F66EA0059ACEB /* CamerasCell.swift in Sources */,
 				B75656B028F3228E00DDF45B /* AppDelegate.swift in Sources */,
 				B763AABC290DAE020059ACEB /* SettingsViewController.swift in Sources */,
 				B75656B228F3228E00DDF45B /* SceneDelegate.swift in Sources */,
@@ -439,6 +445,7 @@
 			files = (
 				B75656C728F3229300DDF45B /* CamCountTests.swift in Sources */,
 				B763AABD290DAE020059ACEB /* SettingsViewController.swift in Sources */,
+				B763AAC1290F66EA0059ACEB /* CamerasCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +453,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B763AAC2290F66EA0059ACEB /* CamerasCell.swift in Sources */,
 				B75656D328F3229300DDF45B /* CamCountUITestsLaunchTests.swift in Sources */,
 				B75656D128F3229300DDF45B /* CamCountUITests.swift in Sources */,
 				B763AABE290DAE020059ACEB /* SettingsViewController.swift in Sources */,
