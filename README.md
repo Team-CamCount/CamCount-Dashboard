@@ -32,8 +32,10 @@ The CamCount dashboard software allows users of the CamCount system to view all 
 ## Product Logo
 **General Icon**
 <img src="camcount_appicon.png" width="200">
+
 **Simplified Icon** (For App Icon)
 <img src="camcount_appicon2.png" width="200">
+
 
 
 ## Product Spec
