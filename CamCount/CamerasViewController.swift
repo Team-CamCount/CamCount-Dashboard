@@ -6,6 +6,7 @@
 //
 
 import UIKit
+//import FirebaseDatabase
 
 class CamerasViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -14,33 +15,88 @@ class CamerasViewController: UIViewController, UITableViewDataSource, UITableVie
     
     
     
+    //MARK: - Properties
+    //var ref: DatabaseReference!
+    
+    
+    
+    //MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        //FIXME: See why these aren't working.
-        //tableView.dataSource = self
-        //tableView.delegate = self
-    }
-    
-    
-    
-    //MARK: - TableView Stubs
-    //These stubs came with the UITableViewDataSource and UITableViewDelegate that were manually added in the "class" line at the start of the file.
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20 //TODO: Change this according to the # of cameras we are pulling from Firebase.
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        camerasTableView.dataSource = self
+        camerasTableView.delegate = self
         
-        //cell.textLabel.text = "row: \(indexPath.row)"
+        //creating a database reference
+        //self.ref = Database.database().reference()
+        
+        
+        //self.tableView.reloadData()
+    }
+    
+    
+    
+    //MARK: - View Did Appear
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    
+    
+    //MARK: - Gets Data
+    /*func observeData()
+    {
+        self.ref.child("cameras").child("cameraTest").observe(.value, with:{(snapshot) in
+            
+            let name = snapshot.value as? String
+        })
+    }*/
+    
+    
+    
+    //MARK: - TableView Stub (Row Number)
+    //These stubs came with the UITableViewDataSource and UITableViewDelegate that were manually added in the "class" line at the start of the file.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 20
+        //FIXME: Change this according to the # of cameras we are pulling from Firebase.
+    }
+
+    
+    
+    //MARK: - TableView Stub (Each Row)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        //let cell = UITableViewCell()
+        
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CamerasCell") as! CamerasCell
+        
+        //UI design for cells
+        cell.layer.borderWidth = 8
+        cell.layer.cornerRadius = 16
+    
+        
+        //cell.textLabel!.text = "row: \(indexPath.row)"
+        
+        
+        cell.cameraAssociation.text = "Testing Association"
+        cell.cameraLocation.text = "Testing Location"
+        
         
         return cell
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

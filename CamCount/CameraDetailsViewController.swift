@@ -1,15 +1,14 @@
 //
-//  SettingsViewController.swift
+//  CameraDetailsViewController.swift
 //  CamCount
 //
-//  Created by Paulina DeVito on 10/29/22.
+//  Created by Paulina DeVito on 11/11/22.
 //
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class CameraDetailsViewController: UIViewController {
 
-    //MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
 

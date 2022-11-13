@@ -10,6 +10,7 @@
 		0CB4CFC7B63392149AEDFAFF /* Pods_CamCountTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C79664F2D9AF7FBB1B143AD /* Pods_CamCountTests.framework */; };
 		7421A8A23959710B9BF1DABE /* Pods_CamCount.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1F0A5407AD75A09A074966 /* Pods_CamCount.framework */; };
 		9D17E7785165FF36061F5915 /* Pods_CamCount_CamCountUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A937E63C0B64098F9CB8BD17 /* Pods_CamCount_CamCountUITests.framework */; };
+		B72BF61B291E3C8000426AEB /* CameraDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72BF61A291E3C8000426AEB /* CameraDetailsViewController.swift */; };
 		B75656B028F3228E00DDF45B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75656AF28F3228E00DDF45B /* AppDelegate.swift */; };
 		B75656B228F3228E00DDF45B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75656B128F3228E00DDF45B /* SceneDelegate.swift */; };
 		B75656B428F3228E00DDF45B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75656B328F3228E00DDF45B /* LoginViewController.swift */; };
@@ -57,6 +58,7 @@
 		7E0FC24BE990BADED60EBEBA /* Pods-CamCountTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamCountTests.release.xcconfig"; path = "Target Support Files/Pods-CamCountTests/Pods-CamCountTests.release.xcconfig"; sourceTree = "<group>"; };
 		9C79664F2D9AF7FBB1B143AD /* Pods_CamCountTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CamCountTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A937E63C0B64098F9CB8BD17 /* Pods_CamCount_CamCountUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CamCount_CamCountUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B72BF61A291E3C8000426AEB /* CameraDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraDetailsViewController.swift; sourceTree = "<group>"; };
 		B75656AC28F3228E00DDF45B /* CamCount.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CamCount.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B75656AF28F3228E00DDF45B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B75656B128F3228E00DDF45B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				B75656B328F3228E00DDF45B /* LoginViewController.swift */,
 				B763AAB229072B230059ACEB /* CamerasViewController.swift */,
 				B763AABF290F66EA0059ACEB /* CamerasCell.swift */,
+				B72BF61A291E3C8000426AEB /* CameraDetailsViewController.swift */,
 				B763AABB290DAE020059ACEB /* SettingsViewController.swift */,
 				B75656B828F3229200DDF45B /* Assets.xcassets */,
 				B763AAB6290CD40E0059ACEB /* GoogleService-Info.plist */,
@@ -431,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B75656B428F3228E00DDF45B /* LoginViewController.swift in Sources */,
+				B72BF61B291E3C8000426AEB /* CameraDetailsViewController.swift in Sources */,
 				B763AAB329072B230059ACEB /* CamerasViewController.swift in Sources */,
 				B763AAC0290F66EA0059ACEB /* CamerasCell.swift in Sources */,
 				B75656B028F3228E00DDF45B /* AppDelegate.swift in Sources */,
