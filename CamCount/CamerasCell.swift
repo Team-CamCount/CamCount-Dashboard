@@ -15,6 +15,7 @@ class CamerasCell: UITableViewCell {
     @IBOutlet weak var cameraBattery: UIProgressView!
     
     
+    
     //MARK: - Cell Functions
     override func awakeFromNib() {
         super.awakeFromNib()
