@@ -103,7 +103,7 @@ The CamCount dashboard software allows users of the CamCount system to view all 
 Authentication will be done by Firebase's authentication system, which is separate from the Realtime Database. 
    
 #### Realtime Database
-<img src="firebase_database_schema.png" width="600">
+<img src="firebase_database_schema.png" width="800">
  
 
 ### Networking
