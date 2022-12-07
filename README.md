@@ -92,7 +92,8 @@ The CamCount dashboard software allows users of the CamCount system to view all 
 
 ## Wireframes
 **Hand-Sketched Wireframe** 
-<img src="" width="600">
+
+<img src="wireframe.jpg" width="600">
 
 
 
