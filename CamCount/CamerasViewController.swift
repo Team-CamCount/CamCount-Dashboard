@@ -6,7 +6,9 @@
 //
 
 import UIKit
-//import FirebaseDatabase
+import Firebase
+import FirebaseDatabase
+
 
 class CamerasViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -14,101 +16,141 @@ class CamerasViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var camerasTableView: UITableView!
     
     
-    
-    //MARK: - Properties
-    //var ref: DatabaseReference!
-    
+    //MARK: - Global Variables
+    var ref: DatabaseReference!
+    var allCameras = [Camera]()
+    let cellSpacingHeight: CGFloat = 0.2
     
     
     //MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
         camerasTableView.dataSource = self
         camerasTableView.delegate = self
         
-        //creating a database reference
-        //self.ref = Database.database().reference()
-        
-        
-        //self.tableView.reloadData()
+        //creating the Firebase database reference
+        self.ref = Database.database().reference()
     }
-    
     
     
     //MARK: - View Did Appear
     override func viewDidAppear(_ animated: Bool) {
+        
         super.viewDidAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+        loadCameras()
     }
     
     
-    
-    //MARK: - Gets Data
-    /*func observeData()
+    //MARK: - Get Camera Data
+    @objc func loadCameras()
     {
-        self.ref.child("cameras").child("cameraTest").observe(.value, with:{(snapshot) in
+        self.ref.child("root/cameras").observe(DataEventType.value, with: {(snapshot) in
             
-            let name = snapshot.value as? String
+            //code to execute when any value under this is changed
+            if (snapshot.childrenCount > 0) {
+                self.allCameras.removeAll()
+                
+                for camera in snapshot.children.allObjects as! [DataSnapshot] {
+                    
+                    let object = camera.value as? [String: AnyObject]
+                    let association = object?["association"]
+                    let location = object?["location"]
+                    let count = object?["count"]
+                    let battery = object?["battery"]
+                    
+                    
+                    let camera = Camera(association: association as! String, location: location as! String, count: count as! Int, battery: battery as! Int)
+                    
+                    self.allCameras.append(camera)
+            
+                    
+                    self.camerasTableView.reloadData()
+                    
+                    //self.refreshControl.endRefreshing() //ends the pull to refresh
+                }
+            }
         })
-    }*/
-    
-    
+    }
+
     
     //MARK: - TableView Stub (Row Number)
     //These stubs came with the UITableViewDataSource and UITableViewDelegate that were manually added in the "class" line at the start of the file.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 20
-        //FIXME: Change this according to the # of cameras we are pulling from Firebase.
+    
+        //the amount of cameras we are getting back from Firebase
+        return allCameras.count
     }
 
-    
     
     //MARK: - TableView Stub (Each Row)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        //let cell = UITableViewCell()
-        
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "CamerasCell") as! CamerasCell
         
         //UI design for cells
-        cell.layer.borderWidth = 8
-        cell.layer.cornerRadius = 16
-    
+        cell.contentView.backgroundColor = UIColor.clear
+        camerasTableView.backgroundColor = UIColor.clear
+        cell.backgroundColor = UIColor.clear
+        //cell.layer.backgroundColor = UIColor(red: 018/255, green: 018/255, blue: 018/255, alpha: 0.3).cgColor
+        //cell.layer.cornerRadius = 8
         
-        //cell.textLabel!.text = "row: \(indexPath.row)"
+        let camera: Camera = allCameras[indexPath.row]
         
+        cell.cameraAssociation?.text = camera.association
+        cell.cameraLocation?.text = camera.location
         
-        cell.cameraAssociation.text = "Testing Association"
-        cell.cameraLocation.text = "Testing Location"
+        if (camera.count >= 0) {
+            cell.cameraCount?.text = String(camera.count)
+        } else {
+            //makes sure that the camera count never displays a value less than 0
+            cell.cameraCount?.text = String(0)
+        }
+        
+        if (camera.battery > 0)
+        {
+            //change the progress color depending on how much battery is left
+            if (camera.battery > 70)
+            {
+                cell.cameraBattery.progressTintColor = UIColor.green
+            } else if (camera.battery > 30) {
+                cell.cameraBattery.progressTintColor = UIColor.yellow
+            } else {
+                cell.cameraBattery.progressTintColor = UIColor.red
+            }
+            //set the amount of progress
+            let temp1 = Float(camera.battery)
+            let temp2 = temp1 / 100
+            cell.cameraBattery.setProgress(temp2, animated: true)
+        } else {
+            //makes sure that the camera battery never displays less than 0
+            cell.cameraBattery.setProgress(0, animated: true)
+        }
         
         
         return cell
     }
-
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // MARK: - Navigation (Segue)
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        //find the selected game
+        let cell = sender as! UITableViewCell
+        let indexPath = camerasTableView.indexPath(for: cell)!
+        //pass the selected game to the details view controller
+        let cameraDetailsViewController = segue.destination as! CameraDetailsViewController
+        
+        //sets each variable's data to the destination's passedCamera
+        let camera: Camera = allCameras[indexPath.row]
+        cameraDetailsViewController.passedCamera.association = camera.association
+        cameraDetailsViewController.passedCamera.location = camera.location
+        cameraDetailsViewController.passedCamera.count = camera.count
+        cameraDetailsViewController.passedCamera.battery = camera.battery
+        
+        //deselects the row
+        camerasTableView.deselectRow(at: indexPath, animated: true)
     }
-    */
 
 }
