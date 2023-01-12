@@ -14,6 +14,7 @@ class CamerasViewController: UIViewController, UITableViewDataSource, UITableVie
     
     //MARK: - Outlets
     @IBOutlet weak var camerasTableView: UITableView!
+    @IBOutlet weak var camerasSubview: UIView!
     
     
     //MARK: - Global Variables
@@ -73,6 +74,13 @@ class CamerasViewController: UIViewController, UITableViewDataSource, UITableVie
             }
         })
     }
+    
+    
+    //MARK: - Style Elements
+    func styleElements() {
+        camerasTableView.layer.cornerRadius = 16
+        camerasSubview.layer.cornerRadius = 30
+    }
 
     
     //MARK: - TableView Stub (Row Number)
@@ -82,19 +90,14 @@ class CamerasViewController: UIViewController, UITableViewDataSource, UITableVie
         //the amount of cameras we are getting back from Firebase
         return allCameras.count
     }
-
+    
     
     //MARK: - TableView Stub (Each Row)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CamerasCell") as! CamerasCell
         
-        //UI design for cells
-        cell.contentView.backgroundColor = UIColor.clear
-        camerasTableView.backgroundColor = UIColor.clear
-        cell.backgroundColor = UIColor.clear
-        //cell.layer.backgroundColor = UIColor(red: 018/255, green: 018/255, blue: 018/255, alpha: 0.3).cgColor
-        //cell.layer.cornerRadius = 8
+        styleElements()
         
         let camera: Camera = allCameras[indexPath.row]
         
@@ -107,6 +110,7 @@ class CamerasViewController: UIViewController, UITableViewDataSource, UITableVie
             //makes sure that the camera count never displays a value less than 0
             cell.cameraCount?.text = String(0)
         }
+        
         
         if (camera.battery > 0)
         {
@@ -134,7 +138,7 @@ class CamerasViewController: UIViewController, UITableViewDataSource, UITableVie
     
     
     // MARK: - Navigation (Segue)
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         //find the selected game
         let cell = sender as! UITableViewCell
@@ -151,6 +155,6 @@ class CamerasViewController: UIViewController, UITableViewDataSource, UITableVie
         
         //deselects the row
         camerasTableView.deselectRow(at: indexPath, animated: true)
-    }
+    }*/
 
 }

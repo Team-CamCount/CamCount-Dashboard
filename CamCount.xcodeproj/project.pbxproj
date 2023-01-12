@@ -26,11 +26,11 @@
 		B763AAB8290CD40F0059ACEB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B763AAB6290CD40E0059ACEB /* GoogleService-Info.plist */; };
 		B763AAB9290CD40F0059ACEB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B763AAB6290CD40E0059ACEB /* GoogleService-Info.plist */; };
 		B763AABC290DAE020059ACEB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B763AABB290DAE020059ACEB /* SettingsViewController.swift */; };
-		B763AABD290DAE020059ACEB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B763AABB290DAE020059ACEB /* SettingsViewController.swift */; };
-		B763AABE290DAE020059ACEB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B763AABB290DAE020059ACEB /* SettingsViewController.swift */; };
 		B763AAC0290F66EA0059ACEB /* CamerasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B763AABF290F66EA0059ACEB /* CamerasCell.swift */; };
 		B763AAC1290F66EA0059ACEB /* CamerasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B763AABF290F66EA0059ACEB /* CamerasCell.swift */; };
 		B763AAC2290F66EA0059ACEB /* CamerasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B763AABF290F66EA0059ACEB /* CamerasCell.swift */; };
+		B79E8305296F568400A70547 /* Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79E8304296F568400A70547 /* Styling.swift */; };
+		B7D777AB2966013800FED89E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D777AA2966013800FED89E /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +78,8 @@
 		B763AAB6290CD40E0059ACEB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B763AABB290DAE020059ACEB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B763AABF290F66EA0059ACEB /* CamerasCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamerasCell.swift; sourceTree = "<group>"; };
+		B79E8304296F568400A70547 /* Styling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styling.swift; sourceTree = "<group>"; };
+		B7D777AA2966013800FED89E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C3D90204D37ADEC3282FAC61 /* Pods-CamCount-CamCountUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamCount-CamCountUITests.debug.xcconfig"; path = "Target Support Files/Pods-CamCount-CamCountUITests/Pods-CamCount-CamCountUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,19 +146,15 @@
 		B75656AE28F3228E00DDF45B /* CamCount */ = {
 			isa = PBXGroup;
 			children = (
-				B75656AF28F3228E00DDF45B /* AppDelegate.swift */,
-				B75656B128F3228E00DDF45B /* SceneDelegate.swift */,
 				B75656B828F3229200DDF45B /* Assets.xcassets */,
 				B75656BD28F3229200DDF45B /* Info.plist */,
 				B763AAB6290CD40E0059ACEB /* GoogleService-Info.plist */,
-				B75656B528F3228E00DDF45B /* Main.storyboard */,
-				B75656BA28F3229200DDF45B /* LaunchScreen.storyboard */,
-				B732F4F729259DED007347F3 /* CameraModel.swift */,
-				B75656B328F3228E00DDF45B /* LoginViewController.swift */,
-				B763AAB229072B230059ACEB /* CamerasViewController.swift */,
-				B763AABF290F66EA0059ACEB /* CamerasCell.swift */,
-				B72BF61A291E3C8000426AEB /* CameraDetailsViewController.swift */,
-				B763AABB290DAE020059ACEB /* SettingsViewController.swift */,
+				B7D777B1296601D600FED89E /* Storyboards */,
+				B7D777AF2966019800FED89E /* Delegates */,
+				B79E8303296F564600A70547 /* Helpers */,
+				B7D777AC2966014D00FED89E /* View Controllers */,
+				B7D777B0296601AB00FED89E /* Cells */,
+				B7D777B2296601E700FED89E /* Classes */,
 			);
 			path = CamCount;
 			sourceTree = "<group>";
@@ -176,6 +174,60 @@
 				B75656D228F3229300DDF45B /* CamCountUITestsLaunchTests.swift */,
 			);
 			path = CamCountUITests;
+			sourceTree = "<group>";
+		};
+		B79E8303296F564600A70547 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B79E8304296F568400A70547 /* Styling.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B7D777AC2966014D00FED89E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B75656B328F3228E00DDF45B /* LoginViewController.swift */,
+				B7D777AA2966013800FED89E /* SignUpViewController.swift */,
+				B763AAB229072B230059ACEB /* CamerasViewController.swift */,
+				B72BF61A291E3C8000426AEB /* CameraDetailsViewController.swift */,
+				B763AABB290DAE020059ACEB /* SettingsViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		B7D777AF2966019800FED89E /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				B75656AF28F3228E00DDF45B /* AppDelegate.swift */,
+				B75656B128F3228E00DDF45B /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		B7D777B0296601AB00FED89E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B763AABF290F66EA0059ACEB /* CamerasCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B7D777B1296601D600FED89E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B75656B528F3228E00DDF45B /* Main.storyboard */,
+				B75656BA28F3229200DDF45B /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		B7D777B2296601E700FED89E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B732F4F729259DED007347F3 /* CameraModel.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		EF92D4DB3D98BE93E05ECCC6 /* Pods */ = {
@@ -436,12 +488,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B79E8305296F568400A70547 /* Styling.swift in Sources */,
 				B75656B428F3228E00DDF45B /* LoginViewController.swift in Sources */,
 				B72BF61B291E3C8000426AEB /* CameraDetailsViewController.swift in Sources */,
 				B763AAB329072B230059ACEB /* CamerasViewController.swift in Sources */,
 				B763AAC0290F66EA0059ACEB /* CamerasCell.swift in Sources */,
 				B75656B028F3228E00DDF45B /* AppDelegate.swift in Sources */,
 				B763AABC290DAE020059ACEB /* SettingsViewController.swift in Sources */,
+				B7D777AB2966013800FED89E /* SignUpViewController.swift in Sources */,
 				B732F4F829259DED007347F3 /* CameraModel.swift in Sources */,
 				B75656B228F3228E00DDF45B /* SceneDelegate.swift in Sources */,
 			);
@@ -452,7 +506,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B75656C728F3229300DDF45B /* CamCountTests.swift in Sources */,
-				B763AABD290DAE020059ACEB /* SettingsViewController.swift in Sources */,
 				B763AAC1290F66EA0059ACEB /* CamerasCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,7 +517,6 @@
 				B763AAC2290F66EA0059ACEB /* CamerasCell.swift in Sources */,
 				B75656D328F3229300DDF45B /* CamCountUITestsLaunchTests.swift in Sources */,
 				B75656D128F3229300DDF45B /* CamCountUITests.swift in Sources */,
-				B763AABE290DAE020059ACEB /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
