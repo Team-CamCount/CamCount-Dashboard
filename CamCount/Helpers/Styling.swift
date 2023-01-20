@@ -31,4 +31,13 @@ class Styling {
     static func loginButtonStyle(_ button: UIButton) {
         
     }
+    
+    
+    //MARK: - Styling
+    /*
+    func stylingElements() {
+        errorLabel.alpha = 0
+        Styling.signUpButton1Style(firstNameTextField)
+    }
+    */
 }

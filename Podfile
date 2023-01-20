@@ -9,6 +9,7 @@ target 'CamCount' do
   pod "Charts"
   pod "Firebase/Core"
   pod "Firebase/Database"
+  pod "FirebaseAuth"
 
   target 'CamCountTests' do
     inherit! :search_paths

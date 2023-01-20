@@ -33,6 +33,7 @@
 		B79E83072970873D00A70547 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79E83062970873D00A70547 /* HomeViewController.swift */; };
 		B79E830929709E9200A70547 /* FormValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79E830829709E9200A70547 /* FormValidation.swift */; };
 		B7D777AB2966013800FED89E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D777AA2966013800FED89E /* SignUpViewController.swift */; };
+		B7FA4304297AF71600268BED /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FA4303297AF71600268BED /* MainTabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		B79E83062970873D00A70547 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B79E830829709E9200A70547 /* FormValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidation.swift; sourceTree = "<group>"; };
 		B7D777AA2966013800FED89E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		B7FA4303297AF71600268BED /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		C3D90204D37ADEC3282FAC61 /* Pods-CamCount-CamCountUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamCount-CamCountUITests.debug.xcconfig"; path = "Target Support Files/Pods-CamCount-CamCountUITests/Pods-CamCount-CamCountUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,6 +159,7 @@
 				B7D777AF2966019800FED89E /* Delegates */,
 				B79E8303296F564600A70547 /* Helpers */,
 				B7D777AC2966014D00FED89E /* View Controllers */,
+				B7FA4302297AF6D000268BED /* Tab Bar Controllers */,
 				B7D777B0296601AB00FED89E /* Cells */,
 				B7D777B2296601E700FED89E /* Classes */,
 			);
@@ -234,6 +237,14 @@
 				B732F4F729259DED007347F3 /* CameraModel.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		B7FA4302297AF6D000268BED /* Tab Bar Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B7FA4303297AF71600268BED /* MainTabBarViewController.swift */,
+			);
+			path = "Tab Bar Controllers";
 			sourceTree = "<group>";
 		};
 		EF92D4DB3D98BE93E05ECCC6 /* Pods */ = {
@@ -501,6 +512,7 @@
 				B763AAC0290F66EA0059ACEB /* CamerasCell.swift in Sources */,
 				B75656B028F3228E00DDF45B /* AppDelegate.swift in Sources */,
 				B79E830929709E9200A70547 /* FormValidation.swift in Sources */,
+				B7FA4304297AF71600268BED /* MainTabBarViewController.swift in Sources */,
 				B763AABC290DAE020059ACEB /* SettingsViewController.swift in Sources */,
 				B79E83072970873D00A70547 /* HomeViewController.swift in Sources */,
 				B7D777AB2966013800FED89E /* SignUpViewController.swift in Sources */,

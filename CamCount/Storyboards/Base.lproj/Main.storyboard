@@ -71,7 +71,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="yQj-3B-E8f">
-                                <rect key="frame" x="40" y="87" width="310" height="470"/>
+                                <rect key="frame" x="40" y="87" width="310" height="400"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DeJ-gZ-jun">
                                         <rect key="frame" x="0.0" y="0.0" width="310" height="50"/>
@@ -88,18 +88,13 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Z Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xwz-M1-7My">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YND-1k-YBP">
                                         <rect key="frame" x="0.0" y="210" width="310" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YND-1k-YBP">
-                                        <rect key="frame" x="0.0" y="280" width="310" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bf-Ny-MM9">
-                                        <rect key="frame" x="0.0" y="350" width="310" height="50"/>
+                                        <rect key="frame" x="0.0" y="280" width="310" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="S3t-2p-JY5"/>
                                         </constraints>
@@ -109,8 +104,8 @@
                                             <action selector="signUp:" destination="gnc-RD-jAj" eventType="touchUpInside" id="hMt-er-9Er"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Shc-Zk-4Gm">
-                                        <rect key="frame" x="0.0" y="420" width="310" height="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Shc-Zk-4Gm">
+                                        <rect key="frame" x="0.0" y="350" width="310" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
@@ -120,7 +115,6 @@
                                     <constraint firstItem="UES-KJ-UPx" firstAttribute="height" secondItem="DeJ-gZ-jun" secondAttribute="height" id="MuI-iM-2eW"/>
                                     <constraint firstItem="2HJ-ws-mUh" firstAttribute="height" secondItem="DeJ-gZ-jun" secondAttribute="height" id="XXE-w5-33x"/>
                                     <constraint firstItem="2bf-Ny-MM9" firstAttribute="height" secondItem="DeJ-gZ-jun" secondAttribute="height" id="doY-5O-oK5"/>
-                                    <constraint firstItem="Xwz-M1-7My" firstAttribute="height" secondItem="DeJ-gZ-jun" secondAttribute="height" id="fBm-SS-kV7"/>
                                     <constraint firstItem="Shc-Zk-4Gm" firstAttribute="height" secondItem="DeJ-gZ-jun" secondAttribute="height" id="pBP-OQ-61h"/>
                                     <constraint firstItem="YND-1k-YBP" firstAttribute="height" secondItem="DeJ-gZ-jun" secondAttribute="height" id="uiA-ah-KI1"/>
                                 </constraints>
@@ -142,7 +136,6 @@
                         <outlet property="lastNameTextField" destination="2HJ-ws-mUh" id="uxF-SG-OSK"/>
                         <outlet property="passwordTextField" destination="YND-1k-YBP" id="Sf3-sq-dRh"/>
                         <outlet property="signUpButton" destination="2bf-Ny-MM9" id="KgI-Yx-UxO"/>
-                        <outlet property="zNumberTextField" destination="Xwz-M1-7My" id="Rio-iS-3S8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8in-mL-9ps" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -181,7 +174,7 @@
                                             <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oCe-EU-XuL"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r86-9N-MS2">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r86-9N-MS2">
                                         <rect key="frame" x="0.0" y="210" width="310" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
@@ -485,10 +478,10 @@
             </objects>
             <point key="canvasLocation" x="4091" y="439"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar View Controller-->
         <scene sceneID="3hB-bW-JX3">
             <objects>
-                <tabBarController id="ON4-3W-ENF" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TBController" id="ON4-3W-ENF" customClass="MainTabBarViewController" customModule="CamCount" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="srQ-XR-GRA">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

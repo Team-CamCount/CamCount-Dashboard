@@ -7,7 +7,8 @@
 
 import UIKit
 import Firebase
-import FirebaseCore
+import FirebaseAuth
+import FirebaseDatabase
 
 class SignUpViewController: UIViewController {
 
@@ -16,14 +17,13 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var zNumberTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
     
     
     //MARK: - Global Variables
-    
+    var ref: DatabaseReference!
     
     
     //MARK: - View Did Load
@@ -32,19 +32,9 @@ class SignUpViewController: UIViewController {
 
         //stylingElements()
         
-        
+        //creating the Firebase database reference
+        self.ref = Database.database().reference()
     }
-    
-    
-    //MARK: - Styling
-    /*
-    func stylingElements() {
-        errorLabel.alpha = 0
-        Styling.signUpButton1Style(firstNameTextField)
-    }
-    */
-    
-    
     
     
     //MARK: - Sign Up Action
@@ -56,16 +46,34 @@ class SignUpViewController: UIViewController {
             //force unwrapping here--this is fine because we have a condition that ensures the optional is not nil
             showError(error!)
         }
-        
-        //create the user
-        
-        
-        
-        
-        //transition to the home screen
-        
-
-        
+        else {
+            //get cleaned data
+            let firstName = firstNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let lastName = lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            //create the user in the authentication area
+            Auth.auth().createUser(withEmail: email, password: password) { result, error in
+                //this conditional is not entered if error is nil
+                if error != nil {
+                    self.showError("Error creating user.")
+                }
+                else {
+                    //FIXME: Adding the user's first and last names to the db doesn't work. It crashes the app.
+                    //creates the user data in the realtime database
+//                    self.ref = Database.database().reference()
+//                    self.ref.child("root/users/\(result!.user.uid)").setValue(["firstName": firstName, "lastName": lastName]) { (error) in
+//
+//                        if error != nil {
+//                            self.showError("Account was created, but error saving user data.")
+//                        }
+//                    }
+                    //segue to the home screen
+                    self.segueToMainScreens()
+                }
+            }
+        }
     }
     
     
@@ -73,6 +81,18 @@ class SignUpViewController: UIViewController {
     func showError(_ error: String) {
         errorLabel.text = error
         errorLabel.alpha = 1
+    }
+    
+    
+    //MARK: - segueToMainScreens
+    func segueToMainScreens()
+    {
+        //FIXME: This might not work.
+        
+        let mainScreen = storyboard?.instantiateViewController(withIdentifier: "TBController") as? UITabBarController
+        
+        view.window?.rootViewController = mainScreen
+        view.window?.makeKeyAndVisible()
     }
     
     
@@ -87,7 +107,6 @@ class SignUpViewController: UIViewController {
         if firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
                 || lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
                 || emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
-                || zNumberTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
                 || passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             return "Please fill in all required fields."
         }
@@ -100,24 +119,6 @@ class SignUpViewController: UIViewController {
 
         return nil
     }
-    
-    
-   
-    
-    
-    
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
 
 }
