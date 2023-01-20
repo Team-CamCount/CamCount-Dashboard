@@ -6,9 +6,7 @@
 //
 
 import Foundation
-import Firebase
-import FirebaseDatabase
-
+import UIKit
 
 
 class Styling {
