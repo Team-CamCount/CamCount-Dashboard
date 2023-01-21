@@ -14,11 +14,14 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var signUpButton: UIButton!
     
     
-    
+    //MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       //styling
+        Styling.roundButtonStyle(loginButton)
+        Styling.roundButtonStyle(signUpButton)
+        Styling.hollowButtonStyle(signUpButton)
     }
     
 

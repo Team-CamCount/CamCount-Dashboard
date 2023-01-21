@@ -30,11 +30,22 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //stylingElements()
+        //styling
+        Styling.styleTextField(firstNameTextField)
+        Styling.styleTextField(lastNameTextField)
+        Styling.styleTextField(emailTextField)
+        Styling.styleTextField(passwordTextField)
+        Styling.roundButtonStyle(signUpButton)
         
         //creating the Firebase database reference
         self.ref = Database.database().reference()
     }
+    
+    
+    //MARK: - Minimize Keyboard after Typing
+        override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true)
+        }
     
     
     //MARK: - Sign Up Action
@@ -87,8 +98,6 @@ class SignUpViewController: UIViewController {
     //MARK: - segueToMainScreens
     func segueToMainScreens()
     {
-        //FIXME: This might not work.
-        
         let mainScreen = storyboard?.instantiateViewController(withIdentifier: "TBController") as? UITabBarController
         
         view.window?.rootViewController = mainScreen
