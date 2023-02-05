@@ -23,16 +23,12 @@ class Styling {
         textField.layer.addSublayer(bottomLine)
     }
     
-    
     //MARK: - Buttons
-    
     static func filledButtonStyle(_ button: UIButton) {
         button.backgroundColor = UIColor.init(red: 255/255, green: 163/255, blue: 79/255, alpha: 1)
         button.layer.cornerRadius = 24
         button.tintColor = UIColor.white
     }
-    
-    
     static func hollowButtonStyle(_ button: UIButton) {
         button.layer.borderWidth = 2
         button.layer.backgroundColor = UIColor.clear.cgColor
@@ -40,18 +36,11 @@ class Styling {
         button.layer.cornerRadius = 24
         button.tintColor = UIColor.white
     }
-    
-    
     static func roundButtonStyle(_ button: UIButton) {
         button.layer.cornerRadius = 24
     }
-    
-    
-    //MARK: - Styling
-    /*
-    func stylingElements() {
-        errorLabel.alpha = 0
-        Styling.signUpButton1Style(firstNameTextField)
+    static func semiroundButtonStyle(_ button: UIButton) {
+        button.layer.cornerRadius = 12
     }
-    */
+    
 }

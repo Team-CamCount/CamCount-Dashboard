@@ -32,9 +32,13 @@ class SignUpViewController: UIViewController {
 
         //styling
         Styling.styleTextField(firstNameTextField)
+        firstNameTextField.layer.masksToBounds = true
         Styling.styleTextField(lastNameTextField)
+        lastNameTextField.layer.masksToBounds = true
         Styling.styleTextField(emailTextField)
+        emailTextField.layer.masksToBounds = true
         Styling.styleTextField(passwordTextField)
+        passwordTextField.layer.masksToBounds = true
         Styling.roundButtonStyle(signUpButton)
         
         //creating the Firebase database reference
@@ -64,24 +68,30 @@ class SignUpViewController: UIViewController {
             let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
+            
             //create the user in the authentication area
-            Auth.auth().createUser(withEmail: email, password: password) { result, error in
+            Auth.auth().createUser(withEmail: email, password: password) { [weak self] (result, error) in
                 //this conditional is not entered if error is nil
                 if error != nil {
-                    self.showError("Error creating user.")
+                    self?.showError("Error creating user.")
                 }
                 else {
-                    //FIXME: Adding the user's first and last names to the db doesn't work. It crashes the app.
-                    //creates the user data in the realtime database
-//                    self.ref = Database.database().reference()
-//                    self.ref.child("root/users/\(result!.user.uid)").setValue(["firstName": firstName, "lastName": lastName]) { (error) in
-//
-//                        if error != nil {
-//                            self.showError("Account was created, but error saving user data.")
-//                        }
-//                    }
+                    //gets the current user's uid (this was the user just successfully created)
+                    let userID = Auth.auth().currentUser?.uid
+                    
+                    //casting that is necessary to get the strings passed to Firebase
+                    let convertedFirstName = firstName as NSString
+                    let convertedLastName = lastName as NSString
+                    
+                    self?.ref.child("root").child("users").child(userID!).setValue(["firstName": convertedFirstName, "lastName": convertedLastName]) { [weak self] (error, result) in
+
+                        if error != nil {
+                            self?.showError("Your user account was created, but there was an error saving your first and last names.")
+                        }
+                    }
+                    
                     //segue to the home screen
-                    self.segueToMainScreens()
+                    self?.segueToMainScreens()
                 }
             }
         }
@@ -124,6 +134,12 @@ class SignUpViewController: UIViewController {
         let cleanPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         if (FormValidation.isPasswordValid(cleanPassword) == false) {
             return "Please choose a stronger password. Your password must contain a special character and a number. Your password must also be at least 8 characters long."
+        }
+        
+        //check that the password fits the guidelines (go to FormValidation for more info)
+        let cleanEmail = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        if (FormValidation.isEmailValid(cleanEmail) == false) {
+            return "Please choose a correct email that is associated with the FAU organization."
         }
 
         return nil

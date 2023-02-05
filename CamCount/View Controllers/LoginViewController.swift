@@ -26,8 +26,16 @@ class LoginViewController: UIViewController {
         
         //styling
         Styling.styleTextField(emailTextField)
+        emailTextField.layer.masksToBounds = true
         Styling.styleTextField(passwordTextField)
+        passwordTextField.layer.masksToBounds = true
         Styling.roundButtonStyle(loginButton)
+        
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
     }
     
     
@@ -44,19 +52,17 @@ class LoginViewController: UIViewController {
         let cleanPassword = self.passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
         
-        Auth.auth().signIn(withEmail: cleanEmail, password: cleanPassword) { (result, error) in
+        Auth.auth().signIn(withEmail: cleanEmail, password: cleanPassword) { [weak self] (result, error) in
             
             if (error != nil) {
-                //couldn't sign in
-                //TODO:
-                self.errorLabel.text = "Unable to login. Please make sure you typed in the correct email and password."
-                self.errorLabel.alpha = 1
+                self?.errorLabel.text = "Unable to login. Please make sure you typed in the correct email and password."
+                self?.errorLabel.alpha = 1
             }
             else {
-                let mainScreen = self.storyboard?.instantiateViewController(withIdentifier: "TBController") as? UITabBarController
+                let mainScreen = self?.storyboard?.instantiateViewController(withIdentifier: "TBController") as? UITabBarController
                 
-                self.view.window?.rootViewController = mainScreen
-                self.view.window?.makeKeyAndVisible()
+                self?.view.window?.rootViewController = mainScreen
+                self?.view.window?.makeKeyAndVisible()
             }
             
         }

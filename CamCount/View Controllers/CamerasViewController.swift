@@ -30,6 +30,9 @@ class CamerasViewController: UIViewController, UITableViewDataSource, UITableVie
         camerasTableView.dataSource = self
         camerasTableView.delegate = self
         
+        //styling
+        styleElements()
+        
         //creating the Firebase database reference
         self.ref = Database.database().reference()
     }
@@ -47,11 +50,11 @@ class CamerasViewController: UIViewController, UITableViewDataSource, UITableVie
     //MARK: - Get Camera Data
     @objc func loadCameras()
     {
-        self.ref.child("root/cameras").observe(DataEventType.value, with: {(snapshot) in
+        self.ref.child("root/cameras").observe(DataEventType.value, with: { [weak self] (snapshot) in
             
             //code to execute when any value under this is changed
             if (snapshot.childrenCount > 0) {
-                self.allCameras.removeAll()
+                self?.allCameras.removeAll()
                 
                 for camera in snapshot.children.allObjects as! [DataSnapshot] {
                     
@@ -64,10 +67,10 @@ class CamerasViewController: UIViewController, UITableViewDataSource, UITableVie
                     
                     let camera = Camera(association: association as! String, location: location as! String, count: count as! Int, battery: battery as! Int)
                     
-                    self.allCameras.append(camera)
+                    self?.allCameras.append(camera)
             
                     
-                    self.camerasTableView.reloadData()
+                    self?.camerasTableView.reloadData()
                     
                     //self.refreshControl.endRefreshing() //ends the pull to refresh
                 }
@@ -97,7 +100,6 @@ class CamerasViewController: UIViewController, UITableViewDataSource, UITableVie
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CamerasCell") as! CamerasCell
         
-        styleElements()
         
         let camera: Camera = allCameras[indexPath.row]
         

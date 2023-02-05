@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FirebaseCore //Paulina added this
+import FirebaseCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

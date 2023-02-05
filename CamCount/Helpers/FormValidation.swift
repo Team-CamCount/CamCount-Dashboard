@@ -12,8 +12,17 @@ import UIKit
 class FormValidation {
   
     
+    //MARK: - Email Validation
+    //SOURCE USED: https://stackoverflow.com/questions/25471114/how-to-validate-an-e-mail-address-in-swift
+    //SOURCE USED: https://stackoverflow.com/questions/5191560/how-to-match-all-email-addresses-at-a-specific-domain-using-regex
+    static func isEmailValid(_ email : String) -> Bool {
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@fau\\.edu$")
+        return emailTest.evaluate(with: email)
+    }
+
+    
     //MARK: - Password Validation
-    //CODE SOURCE: https://iosdevcenters.blogspot.com/2017/06/password-validation-in-swift-30.html
+    //SOURCE USED: https://iosdevcenters.blogspot.com/2017/06/password-validation-in-swift-30.html
     static func isPasswordValid(_ password : String) -> Bool {
         //regex that makes sure the passwords have the following...
             //one character
