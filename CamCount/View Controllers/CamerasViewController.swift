@@ -79,12 +79,14 @@ class CamerasViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     
+    
     //MARK: - Style Elements
     func styleElements() {
         camerasTableView.layer.cornerRadius = 16
         camerasSubview.layer.cornerRadius = 30
     }
 
+    
     
     //MARK: - TableView Stub (Row Number)
     //These stubs came with the UITableViewDataSource and UITableViewDelegate that were manually added in the "class" line at the start of the file.

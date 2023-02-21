@@ -9,7 +9,6 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-
 class CameraDetailsViewController: UIViewController {
     
     //MARK: - Outlets

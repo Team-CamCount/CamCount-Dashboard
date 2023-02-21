@@ -34,6 +34,7 @@ class LoginViewController: UIViewController {
     }
     
     
+    //MARK: - View Did Appear
     override func viewDidAppear(_ animated: Bool) {
         
     }
@@ -50,7 +51,6 @@ class LoginViewController: UIViewController {
         
         let cleanEmail = self.emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let cleanPassword = self.passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        
         
         Auth.auth().signIn(withEmail: cleanEmail, password: cleanPassword) { [weak self] (result, error) in
             
@@ -69,6 +69,4 @@ class LoginViewController: UIViewController {
         
     }
     
-    
 }
-

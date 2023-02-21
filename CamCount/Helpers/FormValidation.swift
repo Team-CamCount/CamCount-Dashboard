@@ -11,7 +11,6 @@ import UIKit
 
 class FormValidation {
   
-    
     //MARK: - Email Validation
     //SOURCE USED: https://stackoverflow.com/questions/25471114/how-to-validate-an-e-mail-address-in-swift
     //SOURCE USED: https://stackoverflow.com/questions/5191560/how-to-match-all-email-addresses-at-a-specific-domain-using-regex
@@ -31,6 +30,5 @@ class FormValidation {
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
         return passwordTest.evaluate(with: password)
     }
-  
     
 }

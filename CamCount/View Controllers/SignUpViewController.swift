@@ -11,7 +11,6 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class SignUpViewController: UIViewController {
-
     
     //MARK: - Outlets
     @IBOutlet weak var firstNameTextField: UITextField!
@@ -43,6 +42,12 @@ class SignUpViewController: UIViewController {
         
         //creating the Firebase database reference
         self.ref = Database.database().reference()
+    }
+    
+    
+    //MARK: - View Did Appear
+    override func viewDidAppear(_ animated: Bool) {
+        
     }
     
     
@@ -109,7 +114,6 @@ class SignUpViewController: UIViewController {
     func segueToMainScreens()
     {
         let mainScreen = storyboard?.instantiateViewController(withIdentifier: "TBController") as? UITabBarController
-        
         view.window?.rootViewController = mainScreen
         view.window?.makeKeyAndVisible()
     }
@@ -129,13 +133,11 @@ class SignUpViewController: UIViewController {
                 || passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             return "Please fill in all required fields."
         }
-        
         //check that the password fits the guidelines (go to FormValidation for more info)
         let cleanPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         if (FormValidation.isPasswordValid(cleanPassword) == false) {
             return "Please choose a stronger password. Your password must contain a special character and a number. Your password must also be at least 8 characters long."
         }
-        
         //check that the password fits the guidelines (go to FormValidation for more info)
         let cleanEmail = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         if (FormValidation.isEmailValid(cleanEmail) == false) {
@@ -144,6 +146,5 @@ class SignUpViewController: UIViewController {
 
         return nil
     }
-    
 
 }
