@@ -1,5 +1,7 @@
-Original App Design - ED1/ED2 FAU
+Original App Design for CamCount - Senior Design
 ===
+
+
 
 # CamCount
 
