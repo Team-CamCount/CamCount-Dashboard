@@ -1,6 +1,12 @@
 Original App Design for CamCount - Senior Design
 ===
 
+> [!IMPORTANT] 
+> This project was created for learning purposes only. ***Please refrain from copying, sharing, and/or using any of my work.*** Thank you.
+
+- [CamCount FAU Webpage](https://www.fau.edu/engineering/senior-design/projects/spring2023/cam-count-counting-devices/)
+- [CamCount Page (Includes Information About Team & App Tutorial)](https://sites.google.com/view/camcountfau/home?authuser=0#h.azbn5i9oojjw)
+- [CamCount Project Presentation (Includes Project Demos @ End)](https://youtu.be/k9iEzy10Wuw?si=cFEz22gLuapJ2FNl)
 
 
 # CamCount
