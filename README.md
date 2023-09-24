@@ -113,6 +113,7 @@ This was originally created to get an idea of how the app would look. The final 
 Authentication will be done by Firebase's authentication system, which is separate from the Realtime Database. 
    
 #### Realtime Database
+Please note that this database diagram was eventually updated slightly to conform to new updates that happened later on in the project timeline.
 <img src="firebase_database_schema.png" width="800">
  
 
