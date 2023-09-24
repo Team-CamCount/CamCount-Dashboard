@@ -8,7 +8,7 @@ Original App Design for CamCount - Senior Design
 
 - [CamCount FAU Webpage](https://www.fau.edu/engineering/senior-design/projects/spring2023/cam-count-counting-devices/)
 - [CamCount Webpage (Includes Information About Team & App Tutorial)](https://sites.google.com/view/camcountfau/home?authuser=0#h.azbn5i9oojjw)
-- [CamCount Project Presentation (Includes Project Demos @ End)](https://youtu.be/k9iEzy10Wuw?si=cFEz22gLuapJ2FNl)
+- [CamCount Project Presentation (Includes App Demos & Complete Project Information)](https://youtu.be/k9iEzy10Wuw?si=cFEz22gLuapJ2FNl)
 
 <img src="camcount_poster.png" width="200">
 
