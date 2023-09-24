@@ -10,7 +10,7 @@ Original App Design for CamCount - Senior Design
 - [CamCount Webpage (Includes Information About Team & App Tutorial)](https://sites.google.com/view/camcountfau/home?authuser=0#h.azbn5i9oojjw)
 - [CamCount Project Presentation (Includes App Demos & Complete Project Information)](https://youtu.be/k9iEzy10Wuw?si=cFEz22gLuapJ2FNl)
 
-<img src="CamCount-Information.jpg" width="600">
+<img src="CamCount-Information.jpg" width="900">
 
 
 # CamCount
