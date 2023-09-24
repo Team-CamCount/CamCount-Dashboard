@@ -16,14 +16,15 @@ Original App Design for CamCount - Senior Design
 
 ## Overview
 ### Description
-CamCount is a people counter product that has been designed for the FAU library. CamCount consists of hardware and processing subsystems that connect to a database, which is then used to power the CamCount dashboard application. This is the dashboard application.
+CamCount is a people counter product that has been designed for the FAU library. CamCount consists of hardware and processing subsystems that connect to a database, which is then used to power the CamCount dashboard application. This is the dashboard application, solo developed by Paulina DeVito.
 
 The CamCount dashboard software allows users of the CamCount system to view all cameras connected to the CamCount system, their people count tallies, and other data analytics.
+
 
 ### App Evaluation
 
 - **Category:** People Counter Dashboard Application
-- **Mobile:** Our application would be primarily designed for mobile use, specifically iOS, but could be adapted for access on a web application. A goal is to abstract the functionality so that the application could have the option to be converted to other platforms in the future.
+- **Mobile:** Our application would be primarily designed for mobile use, specifically iOS. A goal is to abstract the functionality so that the application could have the option to be converted to other platforms in the future.
 - **Story:** Allows users to view all cameras connected to the CamCount system, their people count tallies, and other data analytics.
 - **Market:** Our application was intentionally created for FAU library staff. However, CamCount is made to be a system that could be scalable.
 - **Habit:** The application would allow and encourage users to maintain frequent checks of the amount of people passing in and out of the library.
@@ -49,21 +50,19 @@ The CamCount dashboard software allows users of the CamCount system to view all 
 **Main User Stories**
 * User can login.
 * User can logout.
-* User can view a list of cameras connected in the CamCount system network
-* User can view a details screen for each camera on the cameras list.
+* User can view a list of cameras connected in the CamCount system network.
 * User can view and modify settings.
 
-**Optional User Stories**
-* User can receive notifications outside of the app.
 
 ### 2. Screen Archetypes
 
 * Login/Register
     * Allows user to sign up or log into their account
+    * Has forgot password functionality
+    * Login persistence throughout app included
 * Cameras 
     * Shows the list of cameras with their association, location, and battery
-* Camera Details
-    * Shows the details (specifically the relative people count number and other data analytics) for a specific camera from the Cameras Screen
+    * Shows if each camera is asleep and/or has a battery warning notification
 * Settings
     * Allows user to update their login information 
     * Shows the user information about the team that has developed the application
@@ -72,13 +71,11 @@ The CamCount dashboard software allows users of the CamCount system to view all 
 
 **Tab Bar Navigation** (Tab to Screen)
 * **Cameras**
+* **Analytics** (Prototype stage only. Historical data was not able to be obtained due to the project timeline.)
 * **Settings**
 
-**On-Click Navigation** (Tap to Screen)
-* **Cameras** -> **Camera Details**
-
 **Flow Navigation** (Screen to Screen)
-* **Login** -(upon login success)--> **Cameras** -(upon click or tab bar)--> **Camera Details, Settings**
+* **Login** -(upon login success)--> **Cameras** -(upon click or tab bar)--> **Analytics, Settings**
 
 
 ## Dependencies 
@@ -87,14 +84,14 @@ The CamCount dashboard software allows users of the CamCount system to view all 
 * Firebase
     * *Please note that including Firebase in an Xcode project requires downloading all of the necessary libraries that are included in the package.*
     * *Installation procedures for the Firebase SDK package are provided on the Firebase console area.*
-* [List will be expanded if necessary.]
 
 ***All pods were installed using Cocoapods, one of the most widely used depedency managers for Xcode.***
 
 
 ## Wireframes
-**Hand-Sketched Wireframe** 
 
+**Original, Hand-Sketched Wireframe** 
+This was originally created to get an idea of how the app would look. The final product differed slightly.
 <img src="wireframe.jpg" width="600">
 
 
@@ -114,14 +111,14 @@ Authentication will be done by Firebase's authentication system, which is separa
    - **Login Screen**
       - (Read/GET) Verify user via sign in
       - (Update/POST) Create a new user via sign up
+      - (Update/POST) Allow user to create new login if they forgot their password
    - **Cameras Screen**
       - (Read/GET) Query all cameras from the database
       - (Read/GET) Query all camera associations from the database
       - (Read/GET) Query all camera locations from the database
       - (Read/GET) Query all camera battery levels from the database
-   - **Camera Details Screen**
-      - (Read/GET) Get relative person count for a specific camera
-      - (Read/GET) Get additional data analytics from the database
+      - (Read/GET) Query all camera asleep/awake statuses
+      - (Read/GET) Query all camera battery warnings
    - **Settings Screen**
       - (Read/GET) Get user information
       - (Set/POST) Allow a user to change their login information
